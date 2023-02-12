@@ -8,5 +8,8 @@
     "eslint"
   ],
   "author": "@niu",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@antfu/eslint-config-basic": "*"
+  }
 }

@@ -6,5 +6,8 @@
   "scripts": {},
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@koalaniu/eslint-config-vue": "workspace:*"
+  }
 }
