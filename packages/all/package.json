@@ -1,0 +1,10 @@
+{
+  "name": "@koalaniu/eslint-config",
+  "version": "0.0.0",
+  "description": "eslint config",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

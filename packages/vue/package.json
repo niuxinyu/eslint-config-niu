@@ -1,0 +1,10 @@
+{
+  "name": "@koalaniu/eslint-config-vue",
+  "version": "0.0.0",
+  "description": "eslint config vue",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
