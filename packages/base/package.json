@@ -1,6 +1,6 @@
 {
-  "name": "@koalaniu/eslint-config-basic",
-  "version": "0.0.1",
+  "name": "@koalaniu/eslint-config-base",
+  "version": "0.0.0",
   "description": "eslint rules",
   "main": "index.js",
   "scripts": {},
