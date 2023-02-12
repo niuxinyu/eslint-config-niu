@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['@niu']
+  extends: ['@koalaniu']
 };

@@ -2,15 +2,21 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/eslint-config': ^0.35.2
+  '@koalaniu/eslint-config': '*'
   bumpp: ^8.2.1
   eslint: ^8.26.0
 
 devDependencies:
   '@antfu/eslint-config': registry.npmmirror.com/@antfu/eslint-config/0.35.2_eslint@8.34.0
+  '@koalaniu/eslint-config': 0.0.2
   bumpp: registry.npmmirror.com/bumpp/8.2.1
   eslint: registry.npmmirror.com/eslint/8.34.0
 
 packages:
+
+  /@koalaniu/eslint-config/0.0.2:
+    resolution: {integrity: sha512-KimtCfI3GWKWgs07woEsRemx4mcBWldKIY9z/H0ARl26pgV3q1aXjy5MTm4XV5+QXvrKRRxIV7Cp1PyvfBjoNQ==}
+    dev: true
 
   registry.npmmirror.com/@antfu/eslint-config-basic/0.35.2_jdhkee27zkyosxupi5pgks3luy:
     resolution: {integrity: sha512-2k7Ovkd8U/q0sgfjuT9KzAUV0q187yGxP7JzD2D4YifuJwL5Bh3JC49KpCv9PXMTeRUMJX2y/kOtGYPetocOug==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antfu/eslint-config-basic/-/eslint-config-basic-0.35.2.tgz}

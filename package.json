@@ -11,7 +11,8 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.35.2",
     "bumpp": "^8.2.1",
-    "eslint": "^8.26.0"
+    "eslint": "^8.26.0",
+    "@koalaniu/eslint-config": "*"
   },
   "peerDependencies": {
     "eslint": ">=8.26.0"

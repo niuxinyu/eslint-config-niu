@@ -1,3 +1,3 @@
 module.exports = {
-    extends: ['@niu/eslint-config-vue']
+    extends: ['@koalaniu/eslint-config-vue']
 }
