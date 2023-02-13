@@ -1,5 +1,5 @@
 {
-  "name": "@koalaniu/eslint-config-vue",
+  "name": "@koalaniu/eslint-config-typescript",
   "version": "0.0.0",
   "description": "eslint config",
   "main": "index.js",
@@ -8,13 +8,12 @@
   "license": "MIT",
   "files": ["index.js"],
   "peerDependencies": {
-    "eslint": ">=8.26.0"
+    "eslint": ">=8.26.0",
+    "typescript": ">=3.9"
   },
   "dependencies": {
-    "@antfu/eslint-config-vue": "*",
-    "@koalaniu/eslint-config-base": "workspace:*",
-    "@koalaniu/eslint-config-typescript": "workspace:*",
-    "local-pkg": "^0.4.3"
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0"
   },
   "devDependencies": {
     "eslint": "^8.26.0"

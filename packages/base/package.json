@@ -1,15 +1,19 @@
 {
   "name": "@koalaniu/eslint-config-base",
   "version": "0.0.4",
-  "description": "eslint rules",
+  "description": "eslint config",
   "main": "index.js",
-  "scripts": {},
-  "keywords": [
-    "eslint"
-  ],
-  "author": "@niu",
-  "license": "ISC",
+  "keywords": ["eslint config"],
+  "author": "@koalaniu",
+  "license": "MIT",
+  "files": ["index.js"],
+  "peerDependencies": {
+    "eslint": ">=8.26.0"
+  },
   "dependencies": {
     "@antfu/eslint-config-basic": "*"
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0"
   }
 }

@@ -1,3 +1,3 @@
 module.exports = {
-    extends: ['@antfu/eslint-config-basic']
-}
+  extends: ['@antfu/eslint-config-basic'],
+};
