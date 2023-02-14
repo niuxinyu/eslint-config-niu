@@ -1,3 +1,8 @@
 module.exports = {
-  extends: ['@antfu/eslint-config-basic'],
+  rules: {
+    // override js
+    'semi': ['error', 'always'],
+    'antfu/if-newline': 'off',
+    'curly': ['error', 'all'],
+  },
 };

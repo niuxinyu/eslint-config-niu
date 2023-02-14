@@ -2,4 +2,11 @@ interface Person {
   name: string;
 }
 
-const fn = () => {};
+const a = 1;
+
+const fn = () => {
+  if (a) {
+    return;
+  }
+  return 1;
+};
