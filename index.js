@@ -66,4 +66,16 @@ module.exports = {
         } :
       null),
   },
+  overrides: [
+    {
+      files: ['*.vue'],
+      rules: {
+        'vue/component-tags-order': 'off',
+        'vue/component-name-in-template-casing': 'off',
+        'vue/singleline-html-element-content-newline': 'off',
+        'vue/no-reserved-component-names': 'off',
+        'vue/custom-event-name-casing': 'off',
+      },
+    },
+  ],
 };
