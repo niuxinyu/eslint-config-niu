@@ -1,6 +1,6 @@
 {
   "name": "@koalaniu/eslint-config",
-  "version": "0.0.0",
+  "version": "0.0.1-beta.0",
   "packageManager": "pnpm@7.1.0",
   "author": "@koalaniu",
   "main": "index.js",
