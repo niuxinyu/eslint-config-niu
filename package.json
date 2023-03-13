@@ -1,8 +1,8 @@
 {
-  "name": "@koalaniu/eslint-config",
-  "version": "0.0.1-beta.0",
+  "name": "@koalan/eslint-config",
+  "version": "0.0.0",
   "packageManager": "pnpm@7.1.0",
-  "author": "@koalaniu",
+  "author": "@koalan",
   "main": "index.js",
   "scripts": {
     "release": "bumpp package.json -commit --push --tag && pnpm -r publish --access public"
