@@ -12,9 +12,10 @@ module.exports = {
     'vue/component-tags-order': 'off',
     'vue/component-name-in-template-casing': 'off',
     'vue/singleline-html-element-content-newline': 'off',
+    'vue/no-reserved-component-names': 'off',
+    'vue/custom-event-name-casing': 'off',
     'import/order': [
       'error', {
-        // 'groups': ['builtin', 'external', 'internal', 'sibling', 'parent', 'index', 'object', 'type'],
         'groups': ['builtin', 'external', 'internal', 'sibling', 'parent', 'index'],
         'pathGroups': [
           {
@@ -50,7 +51,11 @@ module.exports = {
           orderImportKind: 'desc',
         },
         'pathGroupsExcludedImportTypes': ['builtin'],
+        'warnOnUnassignedImports': false,
       },
     ],
+    'prefer-promise-reject-errors': 'off',
+    'operator-linebreak': ['error', 'after'],
+    'quote-props': 'off',
   },
 };

@@ -11,7 +11,8 @@
     "eslint": ">=8.26.0"
   },
   "dependencies": {
-    "@koalaniu/eslint-config-vue": "workspace:*"
+    "@koalaniu/eslint-config-vue": "workspace:*",
+    "@antfu/eslint-config": "*"
   },
   "devDependencies": {
     "eslint": "^8.26.0"
