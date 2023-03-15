@@ -4,13 +4,14 @@ const isTS = isPackageExists('typescript');
 
 const sharedRules = {
   'arrow-parens': ['error', 'always'],
-  'semi': ['error', 'always'],
+  semi: ['error', 'always'],
   'antfu/if-newline': 'off',
-  'curly': ['error', 'all'],
+  curly: ['error', 'all'],
   'import/order': [
-    'error', {
-      'groups': ['builtin', 'external', 'internal', 'sibling', 'parent', 'index'],
-      'pathGroups': [
+    'error',
+    {
+      groups: ['builtin', 'external', 'internal', 'sibling', 'parent', 'index'],
+      pathGroups: [
         {
           pattern: 'vue',
           group: 'builtin',
@@ -38,13 +39,13 @@ const sharedRules = {
         },
       ],
       'newlines-between': 'always',
-      'alphabetize': {
+      alphabetize: {
         order: 'asc',
         caseInsensitive: true,
         orderImportKind: 'desc',
       },
-      'pathGroupsExcludedImportTypes': ['builtin'],
-      'warnOnUnassignedImports': false,
+      pathGroupsExcludedImportTypes: ['builtin'],
+      warnOnUnassignedImports: false,
     },
   ],
   'prefer-promise-reject-errors': 'off',
@@ -53,23 +54,22 @@ const sharedRules = {
 };
 
 module.exports = {
-  extends: ['@antfu/eslint-config'],
-  rules: {
-    ...sharedRules,
-    ...(isTS ?
-        {
-        // Overrides TS
-          '@typescript-eslint/semi': ['error', 'always'],
-          '@typescript-eslint/member-delimiter-style': 'off',
-          '@typescript-eslint/brace-style': 'off',
-          '@typescript-eslint/no-use-before-define': 'off',
-        } :
-      null),
-  },
+  extends: ['@antfu'],
   overrides: [
     {
-      files: ['*.vue'],
+      files: ['*.js', '*.jsx', '*.ts', '*.tsx', '*.vue'],
       rules: {
+        ...sharedRules,
+        // Overrides TS
+        ...(isTS ?
+            {
+              '@typescript-eslint/semi': ['error', 'always'],
+              '@typescript-eslint/member-delimiter-style': 'off',
+              '@typescript-eslint/brace-style': 'off',
+              '@typescript-eslint/no-use-before-define': 'off',
+            } :
+          null),
+        // Overrides Vue
         'vue/component-tags-order': 'off',
         'vue/component-name-in-template-casing': 'off',
         'vue/singleline-html-element-content-newline': 'off',
