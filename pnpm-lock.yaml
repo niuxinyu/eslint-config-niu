@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/eslint-config': '*'
+  '@koalan/eslint-config': ^0.0.1-beta.0
   bumpp: ^8.2.1
   eslint: ^8.26.0
   local-pkg: ^0.4.3
@@ -9,6 +10,7 @@ specifiers:
 
 dependencies:
   '@antfu/eslint-config': registry.npmmirror.com/@antfu/eslint-config/0.36.0_vgl77cfdswitgr47lm5swmv43m
+  '@koalan/eslint-config': 0.0.1-beta.1_zz7qjltqng3vndx4pbpagfumu4
 
 devDependencies:
   bumpp: registry.npmmirror.com/bumpp/8.2.1
@@ -17,6 +19,16 @@ devDependencies:
   typescript: registry.npmmirror.com/typescript/4.9.5
 
 packages:
+
+  /@koalan/eslint-config/0.0.1-beta.1_zz7qjltqng3vndx4pbpagfumu4:
+    resolution: {integrity: sha512-27YLK1utfh+mvzLzq0769eIaB/Y/WyQxJTx4gtNx5Ser8yI4LFlROQ6gTok6H82Id9jg5I1cbG2QNngamaT+0w==}
+    peerDependencies:
+      '@antfu/eslint-config': '*'
+      eslint: '>=8.26.0'
+    dependencies:
+      '@antfu/eslint-config': registry.npmmirror.com/@antfu/eslint-config/0.36.0_vgl77cfdswitgr47lm5swmv43m
+      eslint: registry.npmmirror.com/eslint/8.36.0
+    dev: false
 
   registry.npmmirror.com/@antfu/eslint-config-basic/0.36.0_23hxnivi4panfyl6n4sux5roki:
     resolution: {integrity: sha512-2b3ZB7pO00nxAERDXo82iYPjLQ4l/AOMm0CTKmGmqWbN3RB33EIQWzYheZRboSbAVzWpI1/3rg/Gu+7xYVMYHA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antfu/eslint-config-basic/-/eslint-config-basic-0.36.0.tgz}
