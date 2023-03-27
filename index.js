@@ -67,6 +67,14 @@ module.exports = {
               '@typescript-eslint/member-delimiter-style': 'off',
               '@typescript-eslint/brace-style': 'off',
               '@typescript-eslint/no-use-before-define': 'off',
+              '@typescript-eslint/comma-dangle': ['error', {
+                'arrays': 'always-multiline',
+                'objects': 'always-multiline',
+                'imports': 'always-multiline',
+                'exports': 'always-multiline',
+                'functions': 'always-multiline',
+                'generics': 'always',
+              }],
             } :
           null),
         // Overrides Vue
