@@ -1,7 +1,7 @@
 module.exports = {
-  extends: ['@koalaniu/eslint-config-vue'],
+  extends: ['@koalan/eslint-config-vue'],
   rules: {
-    'arrow-parens': ['error', 'always'],
-    'no-use-before-define': 'off',
+    // Overrides
+    'import/named': 'off',
   },
 };

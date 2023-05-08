@@ -4,7 +4,7 @@
   "description": "eslint config",
   "main": "index.js",
   "keywords": ["eslint config"],
-  "author": "@koalaniu",
+  "author": "@koalan",
   "license": "MIT",
   "files": ["index.js"],
   "peerDependencies": {
@@ -12,8 +12,9 @@
     "typescript": ">=3.9"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0"
+    "@koalan/eslint-config-base": "workspace:*",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0"
   },
   "devDependencies": {
     "eslint": "^8.26.0"

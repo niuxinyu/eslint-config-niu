@@ -3,18 +3,16 @@
   "version": "0.0.0",
   "description": "eslint config",
   "main": "index.js",
-  "keywords": [
-    "eslint config"
-  ],
-  "author": "@koalaniu",
+  "keywords": ["eslint config"],
+  "author": "@koalan",
   "license": "MIT",
   "files": [
     "index.js"
   ],
   "dependencies": {
-    "@antfu/eslint-config-vue": "*",
-    "@koalaniu/eslint-config-base": "workspace:*",
-    "@koalaniu/eslint-config-typescript": "workspace:*",
+    "@koalan/eslint-config-base": "workspace:*",
+    "@koalan/eslint-config-typescript": "workspace:*",
+    "eslint-plugin-vue": "^9.9.0",
     "local-pkg": "^0.4.3"
   }
 }
