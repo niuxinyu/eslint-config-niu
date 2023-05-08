@@ -3,10 +3,14 @@
   "version": "0.0.0",
   "description": "eslint config",
   "main": "index.js",
-  "keywords": ["eslint config"],
+  "keywords": [
+    "eslint config"
+  ],
   "author": "@koalan",
   "license": "MIT",
-  "files": ["index.js"],
+  "files": [
+    "index.js"
+  ],
   "peerDependencies": {
     "eslint": ">=8.26.0",
     "typescript": ">=3.9"
