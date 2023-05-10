@@ -1,6 +1,6 @@
 {
   "name": "@koalan/eslint-config-base",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "eslint config",
   "main": "index.js",
   "keywords": [
