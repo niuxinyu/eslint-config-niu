@@ -1,7 +1,8 @@
 module.exports = {
   extends: ['@koalan/eslint-config-vue'],
   rules: {
-    // Overrides
+    // All Overrides
     'import/named': 'off',
+    'prefer-promise-reject-errors': 'off',
   },
 };
