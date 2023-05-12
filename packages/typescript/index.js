@@ -67,7 +67,7 @@ module.exports = {
 
     // Override JS
     'no-useless-constructor': 'off',
-    'indent': 'off',
+    indent: 'off',
     '@typescript-eslint/indent': ['error', 2, {
       SwitchCase: 1,
       VariableDeclarator: 1,
@@ -119,7 +119,7 @@ module.exports = {
       objects: 'always-multiline',
       imports: 'always-multiline',
       exports: 'always-multiline',
-      functions: 'never',
+      functions: 'always-multiline',
       // ts only
       // 箭头函数的泛型需要始终加分号，否则解析会失败
       generics: 'always',
@@ -130,10 +130,10 @@ module.exports = {
     'object-curly-spacing': 'off',
     '@typescript-eslint/object-curly-spacing': ['error', 'always'],
     // js
-    'semi': ['error', 'always'],
+    semi: ['error', 'always'],
     // ts
     '@typescript-eslint/semi': ['error', 'always'],
-    'quotes': 'off',
+    quotes: 'off',
     '@typescript-eslint/quotes': ['error', 'single'],
     'space-before-blocks': 'off',
     '@typescript-eslint/space-before-blocks': ['error', 'always'],
