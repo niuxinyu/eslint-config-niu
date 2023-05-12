@@ -26,7 +26,7 @@ module.exports = {
         '@typescript-eslint/no-implied-eval': 'error',
         'dot-notation': 'off',
         '@typescript-eslint/dot-notation': ['error', { allowKeywords: true }],
-        '@typescript-eslint/no-floating-promises': 'error',
+        '@typescript-eslint/no-floating-promises': 'off',
         '@typescript-eslint/no-misused-promises': 'error',
         '@typescript-eslint/await-thenable': 'error',
         '@typescript-eslint/no-for-in-array': 'error',
@@ -121,7 +121,11 @@ module.exports = {
       exports: 'always-multiline',
       functions: 'never',
       // ts only
+      // 箭头函数的泛型需要始终加分号，否则解析会失败
       generics: 'always',
+      // 其他的仅 需要多行时即可
+      enums: 'always-multiline',
+      tuples: 'always-multiline',
     }],
     'object-curly-spacing': 'off',
     '@typescript-eslint/object-curly-spacing': ['error', 'always'],

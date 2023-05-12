@@ -72,8 +72,8 @@ module.exports = {
     // import
     'import/order': [
       'error', {
-        'groups': ['builtin', 'external', 'internal', 'sibling', 'parent', 'index'],
-        'pathGroups': [
+        groups: ['builtin', 'external', 'internal', 'sibling', 'parent', 'index'],
+        pathGroups: [
           {
             pattern: 'vue',
             group: 'builtin',
@@ -101,13 +101,13 @@ module.exports = {
           },
         ],
         'newlines-between': 'always',
-        'alphabetize': {
+        alphabetize: {
           order: 'asc',
           caseInsensitive: true,
           orderImportKind: 'desc',
         },
-        'pathGroupsExcludedImportTypes': ['builtin'],
-        'warnOnUnassignedImports': false,
+        pathGroupsExcludedImportTypes: ['builtin'],
+        warnOnUnassignedImports: false,
       },
     ],
     'import/first': 'error',
@@ -116,10 +116,10 @@ module.exports = {
     'import/no-absolute-path': 'off',
 
     // common
-    'semi': ['error', 'always'],
-    'curly': ['error', 'all'],
-    'quotes': ['error', 'single'],
-    'quote-props': ['error', 'consistent-as-needed'],
+    semi: ['error', 'always'],
+    curly: ['error', 'all'],
+    quotes: ['error', 'single'],
+    'quote-props': ['error', 'as-needed'],
 
     'unused-imports/no-unused-imports': 'error',
     'unused-imports/no-unused-vars': [
@@ -131,7 +131,7 @@ module.exports = {
     'array-bracket-spacing': ['error', 'never'],
     'brace-style': ['error', '1tbs', { allowSingleLine: true }],
     'block-spacing': ['error', 'always'],
-    'camelcase': 'off',
+    camelcase: 'off',
     'comma-spacing': ['error', { before: false, after: true }],
     'comma-style': ['error', 'last'],
     'comma-dangle': ['error', 'always-multiline'],
@@ -141,7 +141,7 @@ module.exports = {
     'no-cond-assign': ['error', 'always'],
     'func-call-spacing': ['off', 'never'],
     'key-spacing': ['error', { beforeColon: false, afterColon: true }],
-    'indent': ['error', 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
+    indent: ['error', 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
     'no-restricted-syntax': [
       'error',
       'DebuggerStatement',
@@ -206,8 +206,8 @@ module.exports = {
     'array-callback-return': 'error',
     'block-scoped-var': 'error',
     'consistent-return': 'off',
-    'complexity': ['off', 11],
-    'eqeqeq': ['error', 'smart'],
+    complexity: ['off', 11],
+    eqeqeq: ['error', 'smart'],
     'no-alert': 'warn',
     'no-case-declarations': 'error',
     'no-multi-spaces': 'error',

@@ -99,7 +99,7 @@ module.exports = {
     ],
     'vue/operator-linebreak': ['error', 'before'],
     'vue/prefer-template': 'error',
-    'vue/quote-props': ['error', 'consistent-as-needed'],
+    'vue/quote-props': ['error', 'as-needed'],
     'vue/space-in-parens': ['error', 'never'],
     'vue/space-infix-ops': 'error',
     'vue/space-unary-ops': ['error', { words: true, nonwords: false }],
