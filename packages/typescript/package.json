@@ -1,6 +1,6 @@
 {
   "name": "@koalan/eslint-config-typescript",
-  "version": "0.1.4-beta.3",
+  "version": "0.1.4-beta.4",
   "description": "eslint config",
   "main": "index.js",
   "keywords": [
