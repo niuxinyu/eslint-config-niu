@@ -1,4 +1,6 @@
-todo
+fork @antfu/eslint-config
+
+
 eslint
 - typescript
   - [x] @typescript-eslint/no-use-before-define off 禁止定义前的调用

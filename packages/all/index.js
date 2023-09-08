@@ -5,4 +5,4 @@ module.exports = {
     'import/named': 'off',
     'prefer-promise-reject-errors': 'off',
   },
-};
+}

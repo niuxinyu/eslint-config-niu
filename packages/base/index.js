@@ -39,13 +39,12 @@ module.exports = {
     '!.vitepress',
     '!.vscode',
   ],
-  plugins: [
-    'html',
-    'unused-imports',
-  ],
+  plugins: ['html', 'unused-imports'],
   settings: {
     'import/resolver': {
-      node: { extensions: ['.js', '.mjs'] },
+      node: {
+        extensions: ['.js', '.mjs'],
+      },
     },
   },
   overrides: [
@@ -71,8 +70,16 @@ module.exports = {
   rules: {
     // import
     'import/order': [
-      'error', {
-        groups: ['builtin', 'external', 'internal', 'sibling', 'parent', 'index'],
+      'error',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'sibling',
+          'parent',
+          'index',
+        ],
         pathGroups: [
           {
             pattern: 'vue',
@@ -115,16 +122,64 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/no-absolute-path': 'off',
 
+    'padding-line-between-statements': [
+      'error',
+      {
+        blankLine: 'always',
+        prev: 'import',
+        next: [
+          'block',
+          'block-like',
+          'break',
+          'cjs-export',
+          'cjs-import',
+          'class',
+          'const',
+          'debugger',
+          'directive',
+          'do',
+          'export',
+          'expression',
+          'for',
+          'function',
+          'if',
+          'iife',
+          'let',
+          'return',
+          'switch',
+          'throw',
+          'try',
+          'var',
+          'while',
+          'with',
+          // 多行规则和单行规则有冲突
+          // 'multilin-block-like',
+          // 'multiline-const',
+          // 'multiline-expression',
+          // 'multiline-let',
+          // 'multiline-var',
+          // 'singleline-const',
+          // 'singleline-let',
+          // 'singleline-var',
+        ],
+      },
+    ],
+
     // common
-    semi: ['error', 'always'],
-    curly: ['error', 'all'],
+    semi: ['error', 'never'],
+    curly: ['error', 'multi-or-nest', 'consistent'],
     quotes: ['error', 'single'],
     'quote-props': ['error', 'as-needed'],
 
     'unused-imports/no-unused-imports': 'error',
     'unused-imports/no-unused-vars': [
       'warn',
-      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
     ],
 
     'no-param-reassign': 'off',
@@ -141,7 +196,11 @@ module.exports = {
     'no-cond-assign': ['error', 'always'],
     'func-call-spacing': ['off', 'never'],
     'key-spacing': ['error', { beforeColon: false, afterColon: true }],
-    indent: ['error', 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
+    indent: [
+      'error',
+      2,
+      { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 },
+    ],
     'no-restricted-syntax': [
       'error',
       'DebuggerStatement',
@@ -190,17 +249,21 @@ module.exports = {
     'template-curly-spacing': 'error',
     'arrow-parens': ['error', 'always'],
     'generator-star-spacing': 'off',
-    'spaced-comment': ['error', 'always', {
-      line: {
-        markers: ['/'],
-        exceptions: ['/', '#'],
+    'spaced-comment': [
+      'error',
+      'always',
+      {
+        line: {
+          markers: ['/'],
+          exceptions: ['/', '#'],
+        },
+        block: {
+          markers: ['!'],
+          exceptions: ['*'],
+          balanced: true,
+        },
       },
-      block: {
-        markers: ['!'],
-        exceptions: ['*'],
-        balanced: true,
-      },
-    }],
+    ],
 
     // best-practice
     'array-callback-return': 'error',
@@ -221,7 +284,21 @@ module.exports = {
     'operator-linebreak': ['error', 'before'],
     'max-statements-per-line': ['error', { max: 1 }],
 
-    'no-use-before-define': ['error', { functions: false, classes: false, variables: true }],
-    // TODO
+    'no-use-before-define': [
+      'error',
+      { functions: false, classes: false, variables: true },
+    ],
+
+    'max-len': [
+      'error',
+      {
+        code: 80,
+        tabWidth: 2,
+        ignorePattern: '',
+      },
+    ],
+
+    'antfu/if-newline': 'error',
+    'antfu/import-dedupe': 'error',
   },
-};
+}

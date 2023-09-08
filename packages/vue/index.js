@@ -1,6 +1,6 @@
-const { isPackageExists } = require('local-pkg');
+const { isPackageExists } = require('local-pkg')
 
-const isTs = isPackageExists('typescript');
+const isTs = isPackageExists('typescript')
 
 module.exports = {
   overrides: [
@@ -13,9 +13,7 @@ module.exports = {
       rules: {
         'no-unused-vars': 'off',
         'no-undef': 'off',
-        ...(isTs
-          ? { '@typescript-eslint/no-unused-vars': 'off' }
-          : null),
+        ...(isTs ? { '@typescript-eslint/no-unused-vars': 'off' } : null),
       },
     },
   ],
@@ -42,19 +40,29 @@ module.exports = {
     //   order: ['script', 'template', 'style'],
     // }],
     'vue/component-tags-order': 'off',
-    'vue/block-tag-newline': ['error', {
-      singleline: 'always',
-      multiline: 'always',
-    }],
+    'vue/block-tag-newline': [
+      'error',
+      {
+        singleline: 'always',
+        multiline: 'always',
+      },
+    ],
     'vue/component-name-in-template-casing': ['error', 'PascalCase'],
     'vue/component-options-name-casing': ['error', 'PascalCase'],
     'vue/custom-event-name-casing': ['error', 'camelCase'],
-    'vue/define-macros-order': ['error', {
-      order: ['defineProps', 'defineEmits'],
-    }],
-    'vue/html-comment-content-spacing': ['error', 'always', {
-      exceptions: ['-'],
-    }],
+    'vue/define-macros-order': [
+      'error',
+      {
+        order: ['defineProps', 'defineEmits'],
+      },
+    ],
+    'vue/html-comment-content-spacing': [
+      'error',
+      'always',
+      {
+        exceptions: ['-'],
+      },
+    ],
     'vue/no-restricted-v-bind': ['error', '/^v-/'],
     'vue/no-useless-v-bind': 'error',
     'vue/padding-line-between-blocks': ['error', 'always'],
@@ -86,9 +94,15 @@ module.exports = {
       'WithStatement',
     ],
     'vue/no-sparse-arrays': 'error',
-    'vue/object-curly-newline': ['error', { multiline: true, consistent: true }],
+    'vue/object-curly-newline': [
+      'error',
+      { multiline: true, consistent: true },
+    ],
     'vue/object-curly-spacing': ['error', 'always'],
-    'vue/object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }],
+    'vue/object-property-newline': [
+      'error',
+      { allowMultiplePropertiesPerLine: true },
+    ],
     'vue/object-shorthand': [
       'error',
       'always',
@@ -104,5 +118,31 @@ module.exports = {
     'vue/space-infix-ops': 'error',
     'vue/space-unary-ops': ['error', { words: true, nonwords: false }],
     'vue/template-curly-spacing': 'error',
+    // HTML 保留字作为组件名
+    'vue/no-reserved-component-names': 'warn',
+
+    // vue 文件交由 vue 处理
+    'max-len': 'off',
+    'vue/max-len': [
+      'error',
+      {
+        code: 80,
+        template: 80,
+        tabWidth: 2,
+        comments: 80,
+        ignorePattern: '',
+        ignoreComments: true,
+        ignoreTrailingComments: true,
+        ignoreUrls: true,
+        // 是否忽略包含单引号或双引号字符串的行
+        // 某些情况下，比如代码中包括引号等 也会被视为 单引号或双引号行
+        ignoreStrings: false,
+        ignoreTemplateLiterals: true,
+        ignoreRegExpLiterals: true,
+        // 是否忽略 template 中的 html 属性
+        ignoreHTMLAttributeValues: false,
+        ignoreHTMLTextContents: true,
+      },
+    ],
   },
-};
+}
