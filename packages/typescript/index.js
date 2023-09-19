@@ -49,7 +49,6 @@ module.exports = {
   rules: {
     // 仅用于 ts
     'import/named': 'off',
-
     // TS
     '@typescript-eslint/ban-ts-comment': [
       'error',

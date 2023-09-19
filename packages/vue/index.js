@@ -2,6 +2,7 @@ const { isPackageExists } = require('local-pkg')
 
 const isTs = isPackageExists('typescript')
 
+// 根据 vue 版本应用不同规则
 module.exports = {
   overrides: [
     {
@@ -111,7 +112,9 @@ module.exports = {
         avoidQuotes: true,
       },
     ],
-    'vue/operator-linebreak': ['error', 'before'],
+    // 为了和 prettier 兼容
+    // 'vue/operator-linebreak': ['error', 'before'],
+    'vue/operator-linebreak': ['error', 'after'],
     'vue/prefer-template': 'error',
     'vue/quote-props': ['error', 'as-needed'],
     'vue/space-in-parens': ['error', 'never'],
@@ -121,8 +124,8 @@ module.exports = {
     // HTML 保留字作为组件名
     'vue/no-reserved-component-names': 'warn',
 
-    // vue 文件交由 vue 处理
     'max-len': 'off',
+    // vue 文件交由 vue 处理
     'vue/max-len': [
       'error',
       {

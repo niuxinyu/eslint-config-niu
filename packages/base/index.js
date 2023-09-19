@@ -166,8 +166,14 @@ module.exports = {
     ],
 
     // common
+    // 分号 不需要尾随分号
     semi: ['error', 'never'],
-    curly: ['error', 'multi-or-nest', 'consistent'],
+    // 和 prettier 冲突
+    // 修改为全部状态下都需要 花括号
+    // https://eslint.org/docs/latest/rules/curly#rule-details
+    // curly: ['error', 'multi-or-nest', 'consistent'],
+    curly: ['error', 'all'],
+    // 引号 始终是单引号
     quotes: ['error', 'single'],
     'quote-props': ['error', 'as-needed'],
 
@@ -297,8 +303,5 @@ module.exports = {
         ignorePattern: '',
       },
     ],
-
-    'antfu/if-newline': 'error',
-    'antfu/import-dedupe': 'error',
   },
 }
