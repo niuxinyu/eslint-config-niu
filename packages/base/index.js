@@ -1,3 +1,25 @@
+// eslint
+
+const likeBuiltInModules = [
+  'vue',
+  'vue-router',
+  'vuex',
+  'pinia',
+  'react',
+  'react-dom',
+  'react-router-dom',
+  'axios',
+]
+
+const builtinRules = () =>
+  likeBuiltInModules.map((name) => {
+    return {
+      pattern: name,
+      group: 'builtin',
+      position: 'before',
+    }
+  })
+
 module.exports = {
   env: {
     es6: true,
@@ -6,9 +28,12 @@ module.exports = {
   },
   reportUnusedDisableDirectives: true,
   extends: [
+    // https://github.com/standard/eslint-config-standard
     'standard',
+    // https://github.com/import-js/eslint-plugin-import
     'plugin:import/recommended',
   ],
+  // 忽略以下文件
   ignorePatterns: [
     '*.min.*',
     '*.d.ts',
@@ -83,31 +108,17 @@ module.exports = {
           'index',
         ],
         pathGroups: [
-          {
-            pattern: 'vue',
-            group: 'builtin',
-            position: 'before',
-          },
-          {
-            pattern: 'vuex',
-            group: 'builtin',
-            position: 'before',
-          },
-          {
-            pattern: 'vue-router',
-            group: 'builtin',
-            position: 'before',
-          },
+          ...builtinRules(),
           {
             pattern: '@/**',
             group: 'external',
             position: 'after',
           },
-          {
-            pattern: 'coms/**',
-            group: 'external',
-            position: 'after',
-          },
+          // {
+          //   pattern: 'coms/**',
+          //   group: 'external',
+          //   position: 'after',
+          // },
         ],
         'newlines-between': 'always',
         alphabetize: {
@@ -123,7 +134,6 @@ module.exports = {
     'import/no-mutable-exports': 'error',
     'import/no-unresolved': 'off',
     'import/no-absolute-path': 'off',
-
     'padding-line-between-statements': [
       'error',
       {
@@ -168,14 +178,11 @@ module.exports = {
     ],
 
     // common
-    // 分号 不需要尾随分号
+    // prettier
     semi: ['error', 'never'],
-    // 和 prettier 冲突
-    // 修改为全部状态下都需要 花括号
-    // https://eslint.org/docs/latest/rules/curly#rule-details
-    // curly: ['error', 'multi-or-nest', 'consistent'],
+    // prettier
     curly: ['error', 'all'],
-    // 引号 始终是单引号
+    // prettier
     quotes: ['error', 'single'],
     'quote-props': ['error', 'as-needed'],
 
@@ -191,8 +198,10 @@ module.exports = {
     ],
 
     'no-param-reassign': 'off',
+    // prettier
     'array-bracket-spacing': ['error', 'never'],
-    'brace-style': ['error', '1tbs', { allowSingleLine: true }],
+    // prettier 大括号样式
+    'brace-style': ['error', '1tbs'],
     'block-spacing': ['error', 'always'],
     camelcase: 'off',
     'comma-spacing': ['error', { before: false, after: true }],
@@ -255,6 +264,7 @@ module.exports = {
     'prefer-spread': 'error',
     'prefer-template': 'error',
     'template-curly-spacing': 'error',
+    // prettier 箭头函数周围的括号
     'arrow-parens': ['error', 'always'],
     'generator-star-spacing': 'off',
     'spaced-comment': [
@@ -289,7 +299,8 @@ module.exports = {
     'vars-on-top': 'error',
     'require-await': 'off',
     'no-return-assign': 'off',
-    'operator-linebreak': ['error', 'before'],
+    // prettier
+    'operator-linebreak': ['error', 'after'],
     'max-statements-per-line': ['error', { max: 1 }],
 
     'no-use-before-define': [
@@ -297,6 +308,7 @@ module.exports = {
       { functions: false, classes: false, variables: true },
     ],
 
+    // prettier 但是给与长度错误提示
     'max-len': [
       'error',
       {

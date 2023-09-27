@@ -18,4 +18,8 @@
 与 prettier 共用，存在以下冲突
   - [ ] operator-linebreak 因人而异的规则，我的习惯是换行之后将操作符置于行首，但是很遗憾，prettier 目前仍然不支持该配置
   相关的 [issues](https://github.com/prettier/prettier/issues/3806) 那么为了能够使用 prettier 需要修改掉 eslint 中的此配置
-  
+
+
+
+# eslint + prettier
+  不能没有 prettier 的换行功能

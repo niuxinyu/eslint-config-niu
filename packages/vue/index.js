@@ -62,8 +62,11 @@ module.exports = {
         'vue/prefer-separate-static-class': 'error',
 
         // extensions
+        // prettier
         'vue/array-bracket-spacing': ['error', 'never'],
+        // prettier 箭头函数两边的括号
         'vue/arrow-spacing': ['error', { before: true, after: true }],
+        // prettier 均匀的间距
         'vue/block-spacing': ['error', 'always'],
         'vue/brace-style': ['error', 'stroustrup', { allowSingleLine: true }],
         'vue/comma-dangle': ['error', 'always-multiline'],
@@ -114,6 +117,8 @@ module.exports = {
         'vue/template-curly-spacing': 'error',
         // HTML 保留字作为组件名
         'vue/no-reserved-component-names': 'warn',
+        // prettier
+        // 但是给与长度错误提示
         'vue/max-len': [
           'error',
           {
@@ -145,7 +150,7 @@ module.exports = {
     isTs ? '@koalan/eslint-config-typescript' : '@koalan/eslint-config-base',
   ],
   rules: {
-    // vue 文件交由 vue 处理
+    // prettier vue 文件交由 vue 处理
     'max-len': 'off',
   },
 }

@@ -154,6 +154,7 @@ module.exports = {
     semi: ['error', 'never'],
     // ts
     '@typescript-eslint/semi': ['error', 'never'],
+    // 交由 typescript 处理
     quotes: 'off',
     '@typescript-eslint/quotes': ['error', 'single'],
     'space-before-blocks': 'off',
