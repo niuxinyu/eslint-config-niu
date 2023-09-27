@@ -35,6 +35,8 @@ module.exports = {
     '*.key',
     'Dockerfile',
     // force include
+    // 暂时忽略
+    // 需要增加对应的 parser
     '!.github',
     '!.vitepress',
     '!.vscode',
