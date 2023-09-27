@@ -300,7 +300,7 @@ module.exports = {
     'max-len': [
       'error',
       {
-        code: 80,
+        code: 100,
         tabWidth: 2,
         ignorePattern: '',
       },
