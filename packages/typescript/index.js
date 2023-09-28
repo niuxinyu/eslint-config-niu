@@ -77,7 +77,9 @@ module.exports = {
 
     // Override JS
     'no-useless-constructor': 'off',
+    // prettier 缩进
     indent: 'off',
+    // prettier 缩进
     '@typescript-eslint/indent': [
       'error',
       2,
@@ -125,13 +127,13 @@ module.exports = {
     'no-use-before-define': 'off',
     // '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: false, variables: true }],
     '@typescript-eslint/no-use-before-define': 'off',
+    // prettier
     'brace-style': 'off',
-    '@typescript-eslint/brace-style': [
-      'error',
-      '1tbs',
-      { allowSingleLine: true },
-    ],
+    // prettier 块级代码样式
+    '@typescript-eslint/brace-style': ['error', '1tbs'],
+    // prettier
     'comma-dangle': 'off',
+    // prettier 尾逗号
     '@typescript-eslint/comma-dangle': [
       'error',
       {
@@ -170,17 +172,23 @@ module.exports = {
     ],
     'space-infix-ops': 'off',
     '@typescript-eslint/space-infix-ops': 'error',
+    // prettier 关键字间距
     'keyword-spacing': 'off',
+    // prettier 关键字间距
     '@typescript-eslint/keyword-spacing': [
       'error',
       { before: true, after: true },
     ],
+    // prettier
     'comma-spacing': 'off',
+    // prettier 逗号间距
     '@typescript-eslint/comma-spacing': [
       'error',
       { before: false, after: true },
     ],
+    // prettier 额外的括号
     'no-extra-parens': 'off',
+    // prettier 额外的括号
     '@typescript-eslint/no-extra-parens': ['error', 'functions'],
     'no-dupe-class-members': 'off',
     '@typescript-eslint/no-dupe-class-members': 'error',

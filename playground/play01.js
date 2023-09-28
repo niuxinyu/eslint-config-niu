@@ -48,3 +48,10 @@ if (
 if (foo) {
   bar()
 }
+
+var arr = [1, 2, 3]
+arr
+  .map((item) => item ** 2)
+  .filter((item) => item > 2)
+  .concat([4, 5, 6])
+  .every((item) => item > 3)

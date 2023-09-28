@@ -198,21 +198,27 @@ module.exports = {
     ],
 
     'no-param-reassign': 'off',
-    // prettier
+    // prettier 数组括号间距
     'array-bracket-spacing': ['error', 'never'],
     // prettier 大括号样式
     'brace-style': ['error', '1tbs'],
+    // prettier 块级代码间距
     'block-spacing': ['error', 'always'],
     camelcase: 'off',
+    // prettier 逗号间距
     'comma-spacing': ['error', { before: false, after: true }],
+    // prettier 尾逗号样式 换行时在尾部
     'comma-style': ['error', 'last'],
     'comma-dangle': ['error', 'always-multiline'],
     'no-constant-condition': 'warn',
     'no-debugger': 'error',
     'no-console': ['error', { allow: ['warn', 'error'] }],
     'no-cond-assign': ['error', 'always'],
+    // prettier 函数调用间距
     'func-call-spacing': ['off', 'never'],
+    // prettier 对象内冒号前后的间距
     'key-spacing': ['error', { beforeColon: false, afterColon: true }],
+    // prettier 缩进
     indent: [
       'error',
       2,
@@ -266,6 +272,7 @@ module.exports = {
     'template-curly-spacing': 'error',
     // prettier 箭头函数周围的括号
     'arrow-parens': ['error', 'always'],
+    // prettier 生成器星号周围的间距
     'generator-star-spacing': 'off',
     'spaced-comment': [
       'error',
@@ -291,6 +298,7 @@ module.exports = {
     eqeqeq: ['error', 'smart'],
     'no-alert': 'warn',
     'no-case-declarations': 'error',
+    // prettier 多余的空格
     'no-multi-spaces': 'error',
     'no-multi-str': 'error',
     'no-with': 'error',
@@ -301,6 +309,7 @@ module.exports = {
     'no-return-assign': 'off',
     // prettier
     'operator-linebreak': ['error', 'after'],
+    // prettier 每行最大语句数
     'max-statements-per-line': ['error', { max: 1 }],
 
     'no-use-before-define': [

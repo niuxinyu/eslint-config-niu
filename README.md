@@ -22,4 +22,4 @@
 
 
 # eslint + prettier
-  不能没有 prettier 的换行功能
+  重设了所有的和 prettier 冲突的规则

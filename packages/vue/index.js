@@ -62,24 +62,33 @@ module.exports = {
         'vue/prefer-separate-static-class': 'error',
 
         // extensions
-        // prettier
+        // prettier 数组括号间距
         'vue/array-bracket-spacing': ['error', 'never'],
         // prettier 箭头函数两边的括号
         'vue/arrow-spacing': ['error', { before: true, after: true }],
         // prettier 均匀的间距
         'vue/block-spacing': ['error', 'always'],
-        'vue/brace-style': ['error', 'stroustrup', { allowSingleLine: true }],
+        // prettier 块级大括号间距
+        'vue/brace-style': ['error', 'stroustrup'],
+        // prettier 尾逗号
         'vue/comma-dangle': ['error', 'always-multiline'],
+        // prettier 逗号间距
         'vue/comma-spacing': ['error', { before: false, after: true }],
+        // prettier 尾逗号样式 换行时要求逗号在尾部
         'vue/comma-style': ['error', 'last'],
+        // prettier 点位置 换行时在属性前
         'vue/dot-location': ['error', 'property'],
         'vue/dot-notation': ['error', { allowKeywords: true }],
         'vue/eqeqeq': ['error', 'smart'],
-        // 'vue/func-call-spacing': ['off', 'never'],
+        // prettier 函数调用间距
+        'vue/func-call-spacing': ['off', 'never'],
+        // prettier 对象内冒号前后的间距
         'vue/key-spacing': ['error', { beforeColon: false, afterColon: true }],
+        // prettier 关键字间距
         'vue/keyword-spacing': ['error', { before: true, after: true }],
         'vue/no-constant-condition': 'warn',
         'vue/no-empty-pattern': 'error',
+        // prettier 额外的括号
         'vue/no-extra-parens': ['error', 'functions'],
         'vue/no-irregular-whitespace': 'error',
         'vue/no-loss-of-precision': 'error',
