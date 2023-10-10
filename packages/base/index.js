@@ -1,25 +1,4 @@
 // eslint
-
-const likeBuiltInModules = [
-  'vue',
-  'vue-router',
-  'vuex',
-  'pinia',
-  'react',
-  'react-dom',
-  'react-router-dom',
-  'axios',
-]
-
-const builtinRules = () =>
-  likeBuiltInModules.map((name) => {
-    return {
-      pattern: name,
-      group: 'builtin',
-      position: 'before',
-    }
-  })
-
 module.exports = {
   env: {
     es6: true,
@@ -102,23 +81,20 @@ module.exports = {
         groups: [
           'builtin',
           'external',
-          'internal',
-          'sibling',
-          'parent',
-          'index',
+          ['internal', 'sibling', 'parent', 'index'],
+          'unknown',
         ],
         pathGroups: [
-          ...builtinRules(),
           {
-            pattern: '@/**',
-            group: 'external',
-            position: 'after',
+            pattern: 'vue',
+            group: 'builtin',
+            position: 'before',
           },
-          // {
-          //   pattern: 'coms/**',
-          //   group: 'external',
-          //   position: 'after',
-          // },
+          {
+            pattern: 'src/**',
+            group: 'internal',
+            position: 'before',
+          },
         ],
         'newlines-between': 'always',
         alphabetize: {
@@ -128,6 +104,7 @@ module.exports = {
         },
         pathGroupsExcludedImportTypes: ['builtin'],
         warnOnUnassignedImports: false,
+        distinctGroup: true,
       },
     ],
     'import/first': 'error',
