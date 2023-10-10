@@ -74,11 +74,13 @@ module.exports = {
       { 'ts-ignore': 'allow-with-description' },
     ],
     // 接口和类型别名中的分隔符样式
+    // 多行 不添加分号
+    // 单行添加分号
     '@typescript-eslint/member-delimiter-style': [
       'error',
       {
         multiline: {
-          delimiter: 'semi',
+          delimiter: 'none',
           requireLast: true,
         },
         singleline: {
@@ -164,7 +166,7 @@ module.exports = {
         functions: 'always-multiline',
         // ts only
         // 箭头函数的泛型需要始终加分号，否则解析会失败
-        generics: 'always',
+        generics: 'always-multiline',
         // 其他的仅 需要多行时即可
         enums: 'always-multiline',
         tuples: 'always-multiline',
