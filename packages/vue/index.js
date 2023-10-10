@@ -2,7 +2,7 @@ const { isPackageExists } = require('local-pkg')
 
 const isTs = isPackageExists('typescript')
 
-// 根据 vue 版本应用不同规则
+// TODO 根据 vue 版本应用不同规则
 module.exports = {
   overrides: [
     {

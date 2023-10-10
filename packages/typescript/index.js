@@ -1,29 +1,32 @@
-module.exports = {
-  extends: [
-    '@koalan/eslint-config-base',
-    'plugin:import/typescript',
-    'plugin:@typescript-eslint/recommended',
-  ],
-  settings: {
-    'import/resolver': {
-      node: { extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts'] },
-    },
-  },
-  overrides: [
+const fs = require('node:fs')
+const { join } = require('node:path')
+
+const tsconfig = 'tsconfig.eslint.json'
+
+const getOverrides = () => {
+  const isTsEslintConfig = fs.existsSync(join(process.cwd(), tsconfig))
+  if (!isTsEslintConfig) {
+    return []
+  }
+  return [
     {
       parserOptions: {
         tsconfigRootDir: process.cwd(),
-        project: ['tsconfig.json'],
+        project: [tsconfig],
       },
       parser: '@typescript-eslint/parser',
       excludedFiles: ['**/*.md/*.*'],
       files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
       // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended-requiring-type-checking.ts
       rules: {
+        // 禁止将非对象等表达式当作异常抛出
+        // 例如 throw 123 是不允许的
         'no-throw-literal': 'off',
         '@typescript-eslint/no-throw-literal': 'error',
+        // https://eslint.org/docs/latest/rules/no-implied-eval#rule-details
         'no-implied-eval': 'off',
         '@typescript-eslint/no-implied-eval': 'error',
+        // 尽可能使用 . 访问属性
         'dot-notation': 'off',
         '@typescript-eslint/dot-notation': ['error', { allowKeywords: true }],
         '@typescript-eslint/no-floating-promises': 'off',
@@ -45,15 +48,32 @@ module.exports = {
         '@typescript-eslint/unbound-method': 'error',
       },
     },
+  ]
+}
+
+module.exports = {
+  extends: [
+    '@koalan/eslint-config-base',
+    'plugin:import/typescript',
+    'plugin:@typescript-eslint/recommended',
   ],
+  settings: {
+    'import/resolver': {
+      node: { extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts'] },
+    },
+  },
+  overrides: getOverrides(),
   rules: {
     // 仅用于 ts
     'import/named': 'off',
-    // TS
+    // 禁止 ts 类似错误的忽略注释
+    // 例如 @ts-ignore
+    // 允许带有描述的 @ts-ignore
     '@typescript-eslint/ban-ts-comment': [
       'error',
       { 'ts-ignore': 'allow-with-description' },
     ],
+    // 接口和类型别名中的分隔符样式
     '@typescript-eslint/member-delimiter-style': [
       'error',
       {
@@ -159,6 +179,7 @@ module.exports = {
     // 交由 typescript 处理
     quotes: 'off',
     '@typescript-eslint/quotes': ['error', 'single'],
+    // prettier 块级前的空格
     'space-before-blocks': 'off',
     '@typescript-eslint/space-before-blocks': ['error', 'always'],
     'space-before-function-paren': 'off',
