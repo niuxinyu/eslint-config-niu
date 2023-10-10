@@ -1,6 +1,6 @@
 {
   "name": "@koalan/eslint-config-base",
-  "version": "0.1.4-beta.9",
+  "version": "0.1.4-beta.10",
   "description": "eslint config",
   "main": "index.js",
   "keywords": [
@@ -20,7 +20,7 @@
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "eslint-config-standard": "*"
+    "eslint-config-standard": "latest"
   },
   "devDependencies": {
     "eslint": "^8.26.0"
