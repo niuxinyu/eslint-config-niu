@@ -91,8 +91,19 @@ module.exports = {
             position: 'before',
           },
           {
+            pattern: 'vue-router',
+            group: 'builtin',
+            position: 'before',
+          },
+          {
             pattern: 'src/**',
             group: 'internal',
+            position: 'before',
+          },
+          // 规定 @ 开头的路径在 parent 分组之前
+          {
+            pattern: '@/**',
+            group: 'parent',
             position: 'before',
           },
         ],
@@ -215,11 +226,7 @@ module.exports = {
     // prettier 对象内冒号前后的间距
     'key-spacing': ['error', { beforeColon: false, afterColon: true }],
     // prettier 缩进
-    indent: [
-      'error',
-      2,
-      { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 },
-    ],
+    indent: ['error', 2],
     // 禁止某些语法写法
     'no-restricted-syntax': [
       'error',

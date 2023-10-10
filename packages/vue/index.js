@@ -151,6 +151,11 @@ module.exports = {
             ignoreHTMLTextContents: true,
           },
         ],
+        // off
+        // prettier
+        // prettier 总是会为 html 标签加上自闭合标签
+        // 以 prettier 为准
+        'vue/html-self-closing': 'off',
       },
     },
   ],
