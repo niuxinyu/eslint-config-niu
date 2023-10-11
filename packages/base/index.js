@@ -91,11 +91,6 @@ module.exports = {
             position: 'before',
           },
           {
-            pattern: 'vue-router',
-            group: 'builtin',
-            position: 'before',
-          },
-          {
             pattern: 'src/**',
             group: 'internal',
             position: 'before',
