@@ -83,10 +83,6 @@ module.exports = {
           delimiter: 'none',
           requireLast: true,
         },
-        singleline: {
-          delimiter: 'none',
-          requireLast: true,
-        },
       },
     ],
     '@typescript-eslint/type-annotation-spacing': ['error', {}],
