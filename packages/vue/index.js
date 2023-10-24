@@ -156,6 +156,8 @@ module.exports = {
         // prettier 总是会为 html 标签加上自闭合标签
         // 以 prettier 为准
         'vue/html-self-closing': 'off',
+        // prettier https://eslint.vuejs.org/rules/singleline-html-element-content-newline.html
+        'vue/singleline-html-element-content-newline': 'off',
       },
     },
   ],

@@ -99,7 +99,8 @@ module.exports = {
     indent: 'off',
     // prettier
     // 缩进
-    '@typescript-eslint/indent': ['error', 2],
+    // '@typescript-eslint/indent': ['error', 2],
+    '@typescript-eslint/indent': 'off',
     'no-redeclare': 'off',
     '@typescript-eslint/no-redeclare': 'error',
     'no-use-before-define': 'off',
@@ -197,5 +198,6 @@ module.exports = {
     '@typescript-eslint/triple-slash-reference': 'off',
     // handled by unused-imports/no-unused-imports
     '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-extra-semi': 'off'
   },
 }
