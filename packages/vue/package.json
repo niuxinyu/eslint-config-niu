@@ -1,6 +1,6 @@
 {
   "name": "@koalan/eslint-config-vue",
-  "version": "0.1.4-beta.12",
+  "version": "0.1.4-beta.13",
   "description": "eslint config",
   "main": "index.js",
   "keywords": [
