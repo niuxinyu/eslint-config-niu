@@ -198,6 +198,8 @@ module.exports = {
     '@typescript-eslint/triple-slash-reference': 'off',
     // handled by unused-imports/no-unused-imports
     '@typescript-eslint/no-unused-vars': 'off',
-    '@typescript-eslint/no-extra-semi': 'off'
+    '@typescript-eslint/no-extra-semi': 'off',
+    // 不关注导入语句
+    '@typescript-eslint/no-var-requires': 'off',
   },
 }
