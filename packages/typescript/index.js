@@ -85,6 +85,7 @@ module.exports = {
         },
       },
     ],
+    
     '@typescript-eslint/type-annotation-spacing': ['error', {}],
     '@typescript-eslint/consistent-type-imports': [
       'error',
