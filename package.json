@@ -7,7 +7,7 @@
   "main": "src/index.js",
   "module": "src/index.js",
   "scripts": {
-    "release": "bumpp && pnpm -r publish --access public"
+    "release": "bumpp && pnpm publish"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.9.1",
