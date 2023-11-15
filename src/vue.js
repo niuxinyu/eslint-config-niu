@@ -11,7 +11,7 @@ export const vueConfig = (options) => {
 
   return [
     {
-      files: ['*.vue'],
+      files: ['**/*.vue'],
       languageOptions: {
         parser,
         parserOptions: {

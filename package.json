@@ -1,39 +1,38 @@
 {
   "name": "@koalan/eslint-config",
-  "type": "module",
   "version": "0.2.0",
-  "packageManager": "pnpm@7.1.0",
-  "author": "@koalan",
   "license": "MIT",
-  "module": "src/index.js",
+  "author": "@koalan",
+  "type": "module",
   "main": "src/index.js",
+  "module": "src/index.js",
   "scripts": {
     "release": "bumpp && pnpm -r publish --access public"
   },
-  "devDependencies": {
-    "@types/node": "^20.9.0",
+  "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.9.1",
     "@typescript-eslint/parser": "^6.9.1",
-    "bumpp": "8.2.1",
     "eslint": "^8.26.0",
     "eslint-config-standard": "latest",
     "eslint-plugin-html": "7.1.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jsonc": "^2.10.0",
+    "eslint-plugin-markdown": "^3.0.1",
     "eslint-plugin-n": "15.6.1",
     "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-unused-imports": "2.0.0",
     "eslint-plugin-vue": "^9.18.1",
+    "jsonc-eslint-parser": "^2.4.0",
     "local-pkg": "^0.5.0",
-    "typescript": "^5.2.2",
     "vue-eslint-parser": "^9.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "bumpp": "8.2.1",
+    "typescript": "^5.2.2"
   },
   "peerDependencies": {
     "eslint": ">=8.26.0"
   },
-  "dependencies": {
-    "@koalan/eslint-config": "^0.2.0",
-    "eslint-plugin-markdown": "^3.0.1",
-    "jsonc-eslint-parser": "^2.4.0"
-  }
+  "packageManager": "pnpm@7.1.0"
 }
