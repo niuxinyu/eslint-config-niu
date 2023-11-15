@@ -4,8 +4,6 @@ import { join } from 'node:path'
 import * as tsRules from '@typescript-eslint/eslint-plugin'
 import * as parser from '@typescript-eslint/parser'
 
-console.log(tsRules)
-
 let tsconfig = 'tsconfig.eslint.json'
 
 const isFileExit = existsSync(join(process.cwd(), tsconfig))
@@ -17,8 +15,12 @@ if (!isFileExit) {
   tsconfig = 'tsconfig.json'
 }
 
-/** @returns {import('./types.js').ConfigItem[]} */
-export const typescriptConfig = () => {
+/**
+ * @param {import('./index.d.ts').ConfigItemOptions} options
+ * @returns {import('./types.js').ConfigItem[]}
+ *  */
+export const typescriptConfig = (options) => {
+  const { overrides = {} } = options
   return [
     {
       // files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
@@ -164,6 +166,8 @@ export const typescriptConfig = () => {
         'ts/no-extra-semi': 'off',
         // 不关注导入语句
         'ts/no-var-requires': 'off',
+
+        ...overrides,
       },
     },
   ]

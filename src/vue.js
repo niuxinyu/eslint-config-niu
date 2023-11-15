@@ -3,11 +3,11 @@ import * as vuePlugin from 'eslint-plugin-vue'
 import * as parser from 'vue-eslint-parser'
 
 /**
- * @param {import('./types').Options} options
- * @returns {import('./types').ConfigItem[]}
- */
+ * @param {import('./index.d.ts').ConfigItemOptions} options
+ * @returns {import('./index.d.ts').ConfigItem[]}
+ *  */
 export const vueConfig = (options) => {
-  const { enableTypeScript } = options
+  const { isTs, overrides = {} } = options
 
   return [
     {
@@ -19,7 +19,7 @@ export const vueConfig = (options) => {
             jsx: true,
           },
           extraFileExtensions: ['.vue'],
-          parser: enableTypeScript ? tsParser : null,
+          parser: isTs ? tsParser : null,
         },
       },
       plugins: {
@@ -168,6 +168,8 @@ export const vueConfig = (options) => {
         // 以 prettier 为准
         'vue/html-self-closing': 'off',
         'vue/singleline-html-element-content-newline': 'off',
+
+        ...overrides,
       },
     },
   ]

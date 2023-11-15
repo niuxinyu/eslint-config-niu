@@ -1,25 +1,65 @@
 import { isPackageExists } from 'local-pkg'
 
 import { baseConfig } from './base.js'
+import { ignoresConfig } from './ignores.js'
 import { importsConfig } from './imports.js'
+import { jsoncConfig } from './jsonc.js'
+import { markdownConfig } from './markdown.js'
 import { typescriptConfig } from './typescript.js'
+import { vueConfig } from './vue.js'
 
-const isTs = isPackageExists('typescript')
-// const is
+const vuePackages = ['vue', 'nuxt', 'vitepress', '@slidev/cli']
 
-const koalan = () => {
-  const res = [
-    ...baseConfig(),
-    ...importsConfig(),
-    ...typescriptConfig(),
-    // ...vueConfig({
-    //   enableTypeScript: isTs,
-    // }),
+/**
+ * @param {import('./index.d.ts').Options | undefined} options
+ */
+const koalan = (options = {}) => {
+  const {
+    isTs = isPackageExists('typescript'),
+    isVue = vuePackages.some((pkg) => isPackageExists(pkg)),
+    ignores = [],
+  } = options
+
+  const defaultIgnores = ignoresConfig()
+  const ignoresRes = [...defaultIgnores, ...ignores]
+
+  // 基础配置
+  const configs = [
+    ...ignoresRes,
+    ...jsoncConfig({
+      overrides: options.overrides?.jsonc,
+    }),
+    ...baseConfig({
+      overrides: options.overrides?.javascript,
+    }),
+    ...importsConfig({
+      overrides: options.overrides?.imports,
+    }),
   ]
 
-  console.log(res)
+  if (isTs) {
+    configs.push(
+      ...typescriptConfig({
+        overrides: options.overrides?.typescript,
+      }),
+    )
+  }
 
-  return res
+  if (isVue) {
+    configs.push(
+      ...vueConfig({
+        overrides: options.overrides?.vue,
+      }),
+    )
+  }
+
+  configs.push(
+    ...markdownConfig({
+      overrides: options.overrides?.markdown,
+    }),
+  )
+
+  return configs
 }
 
 export default koalan

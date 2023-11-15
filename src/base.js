@@ -1,7 +1,12 @@
 import * as standard from 'eslint-config-standard'
 import * as unusedImports from 'eslint-plugin-unused-imports'
 
-export const baseConfig = () => {
+/**
+ * @param {import('./index.d.ts').ConfigItemOptions} options
+ * @returns {import('./index.d.ts').ConfigItem[]}
+ *  */
+export const baseConfig = (options) => {
+  const { overrides = {} } = options
   return [
     {
       languageOptions: {
@@ -15,38 +20,38 @@ export const baseConfig = () => {
         standard,
         'unused-imports': unusedImports,
       },
-      ignores: [
-        '*.min.*',
-        '*.d.ts',
-        'CHANGELOG.md',
-        'dist',
-        'LICENSE*',
-        'output',
-        'out',
-        'coverage',
-        'public',
-        'temp',
-        'package-lock.json',
-        'pnpm-lock.yaml',
-        'yarn.lock',
-        '__snapshots__',
-        // ignore for in lint-staged
-        '*.css',
-        '*.png',
-        '*.ico',
-        '*.toml',
-        '*.patch',
-        '*.txt',
-        '*.crt',
-        '*.key',
-        'Dockerfile',
-        // force include
-        // 暂时忽略
-        // 需要增加对应的 parser
-        '!.github',
-        '!.vitepress',
-        '!.vscode',
-      ],
+      // ignores: [
+      //   '*.min.*',
+      //   '*.d.ts',
+      //   'CHANGELOG.md',
+      //   'dist',
+      //   'LICENSE*',
+      //   'output',
+      //   'out',
+      //   'coverage',
+      //   'public',
+      //   'temp',
+      //   'package-lock.json',
+      //   'pnpm-lock.yaml',
+      //   'yarn.lock',
+      //   '__snapshots__',
+      //   // ignore for in lint-staged
+      //   '*.css',
+      //   '*.png',
+      //   '*.ico',
+      //   '*.toml',
+      //   '*.patch',
+      //   '*.txt',
+      //   '*.crt',
+      //   '*.key',
+      //   'Dockerfile',
+      //   // force include
+      //   // 暂时忽略
+      //   // 需要增加对应的 parser
+      //   '!.github',
+      //   '!.vitepress',
+      //   '!.vscode',
+      // ],
       settings: {
         'import/resolver': {
           node: {
@@ -54,30 +59,9 @@ export const baseConfig = () => {
           },
         },
       },
-      // overrides: [
-      //   {
-      //     files: ['*.d.ts'],
-      //     rules: {
-      //       'import/no-duplicates': 'off',
-      //     },
-      //   },
-      //   {
-      //     files: ['*.js', '*.cjs'],
-      //     rules: {
-      //       '@typescript-eslint/no-var-requires': 'off',
-      //     },
-      //   },
-      //   {
-      //     files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
-      //     rules: {
-      //       'no-void': ['error', { allowAsStatement: true }],
-      //     },
-      //   },
-      // ],
       rules: {
         // 未使用的 import
         'unused-imports/no-unused-imports': 'error',
-
         // 要求不同语句之间的空行
         // 要求 import 和正式代码之间至少有一个空行
         'padding-line-between-statements': [
@@ -297,9 +281,10 @@ export const baseConfig = () => {
         // prettier
         // 多余分号
         'no-extra-semi': 'off',
-
         // 未使用的变量给与警告
         'no-unused-vars': 'warn',
+
+        ...overrides,
       },
     },
   ]

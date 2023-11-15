@@ -1,6 +1,11 @@
 import * as importsPlugin from 'eslint-plugin-import'
 
-export const importsConfig = () => {
+/**
+ * @param {import('./index.d.ts').ConfigItemOptions} options
+ *  @returns {import('./index.d.ts').ConfigItem[]}
+ *  */
+export const importsConfig = (options) => {
+  const { overrides = {} } = options
   return [
     {
       plugins: {
@@ -50,6 +55,7 @@ export const importsConfig = () => {
         'import/no-mutable-exports': 'error',
         'import/no-unresolved': 'off',
         'import/no-absolute-path': 'off',
+        ...overrides,
       },
     },
   ]
