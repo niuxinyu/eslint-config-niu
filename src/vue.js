@@ -1,5 +1,5 @@
 import * as tsParser from '@typescript-eslint/parser'
-import * as vuePlugin from 'eslint-plugin-vue'
+import vuePlugin from 'eslint-plugin-vue'
 import * as parser from 'vue-eslint-parser'
 
 /**
