@@ -1,8 +1,8 @@
 import * as importsPlugin from 'eslint-plugin-import'
 
 /**
- * @param {import('./index.d.ts').ConfigItemOptions} options
- *  @returns {import('./index.d.ts').ConfigItem[]}
+ * @param {import('./types.d.ts').ConfigItemOptions} options
+ *  @returns {import('./types.d.ts').ConfigItem[]}
  *  */
 export const importsConfig = (options) => {
   const { overrides = {} } = options

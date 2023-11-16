@@ -1,8 +1,8 @@
 import markdown from 'eslint-plugin-markdown'
 
 /**
- * @param {import('./index.d.ts').ConfigItemOptions} options
- * @return {import('./index.d.ts').ConfigItem[]}
+ * @param {import('./types.d.ts').ConfigItemOptions} options
+ * @return {import('./types.d.ts').ConfigItem[]}
  */
 export const markdownConfig = (options) => {
   const { overrides = {} } = options

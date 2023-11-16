@@ -2,8 +2,8 @@ import * as standard from 'eslint-config-standard'
 import * as unusedImports from 'eslint-plugin-unused-imports'
 
 /**
- * @param {import('./index.d.ts').ConfigItemOptions} options
- * @returns {import('./index.d.ts').ConfigItem[]}
+ * @param {import('./types.d.ts').ConfigItemOptions} options
+ * @returns {import('./types.d.ts').ConfigItem[]}
  *  */
 export const baseConfig = (options) => {
   const { overrides = {} } = options
@@ -20,38 +20,6 @@ export const baseConfig = (options) => {
         standard,
         'unused-imports': unusedImports,
       },
-      // ignores: [
-      //   '*.min.*',
-      //   '*.d.ts',
-      //   'CHANGELOG.md',
-      //   'dist',
-      //   'LICENSE*',
-      //   'output',
-      //   'out',
-      //   'coverage',
-      //   'public',
-      //   'temp',
-      //   'package-lock.json',
-      //   'pnpm-lock.yaml',
-      //   'yarn.lock',
-      //   '__snapshots__',
-      //   // ignore for in lint-staged
-      //   '*.css',
-      //   '*.png',
-      //   '*.ico',
-      //   '*.toml',
-      //   '*.patch',
-      //   '*.txt',
-      //   '*.crt',
-      //   '*.key',
-      //   'Dockerfile',
-      //   // force include
-      //   // 暂时忽略
-      //   // 需要增加对应的 parser
-      //   '!.github',
-      //   '!.vitepress',
-      //   '!.vscode',
-      // ],
       settings: {
         'import/resolver': {
           node: {

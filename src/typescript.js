@@ -4,6 +4,8 @@ import { join } from 'node:path'
 import * as tsRules from '@typescript-eslint/eslint-plugin'
 import * as parser from '@typescript-eslint/parser'
 
+import { GLOB_TS, GLOB_TSX } from './glob.js'
+
 let tsconfig = 'tsconfig.eslint.json'
 
 const isFileExit = existsSync(join(process.cwd(), tsconfig))
@@ -16,15 +18,14 @@ if (!isFileExit) {
 }
 
 /**
- * @param {import('./index.d.ts').ConfigItemOptions} options
- * @returns {import('./types.js').ConfigItem[]}
+ * @param {import('./types.d.ts').ConfigItemOptions} options
+ * @returns {import('./types.d.ts').ConfigItem[]}
  *  */
 export const typescriptConfig = (options) => {
   const { overrides = {} } = options
   return [
     {
-      // files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
-      files: ['**/*.?([cm])[jt]s?(x)'],
+      files: [GLOB_TS, GLOB_TSX],
       languageOptions: {
         // tsconfigRootDir: process.cwd(),
         // project: [tsconfig],

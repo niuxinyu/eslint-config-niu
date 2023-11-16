@@ -2,16 +2,18 @@ import * as tsParser from '@typescript-eslint/parser'
 import vuePlugin from 'eslint-plugin-vue'
 import * as parser from 'vue-eslint-parser'
 
+import { GLOB_VUE } from './glob.js'
+
 /**
- * @param {import('./index.d.ts').ConfigItemOptions} options
- * @returns {import('./index.d.ts').ConfigItem[]}
+ * @param {import('./types.d.ts').ConfigItemOptions & { isTs: boolean }} options
+ * @returns {import('./types.d.ts').ConfigItem[]}
  *  */
 export const vueConfig = (options) => {
   const { isTs, overrides = {} } = options
 
   return [
     {
-      files: ['**/*.vue'],
+      files: [GLOB_VUE],
       languageOptions: {
         parser,
         parserOptions: {
@@ -27,23 +29,31 @@ export const vueConfig = (options) => {
       },
       rules: {
         // off
+        // 没行的最大属性
+        // 会和 prettier 的换行冲突
         'vue/max-attributes-per-line': 'off',
+        // 禁止 v-html
         'vue/no-v-html': 'off',
+        // 强制 props 定义类型
         'vue/require-prop-types': 'off',
+        // 要求 props 都有默认值
         'vue/require-default-prop': 'off',
+        // 要求组件名称始终为多字
         'vue/multi-word-component-names': 'off',
+        // 导入vue时 不允许使用 '@vue/xxx' 的形式
         'vue/prefer-import-from-vue': 'off',
         'vue/no-v-text-v-html-on-component': 'off',
 
-        // reactivity transform
+        // 不允许结构 props
         'vue/no-setup-props-destructure': 'off',
 
         // 标签顺序
         // 仅作推荐
-        // 'vue/component-tags-order': ['error', {
-        //   order: ['script', 'template', 'style'],
-        // }],
-        'vue/component-tags-order': 'off',
+        'vue/component-tags-order': ['warning', {
+          order: ['script', 'template', 'style'],
+        }],
+        
+        // 在闭合标签之间要求空行
         'vue/block-tag-newline': [
           'error',
           {
@@ -51,15 +61,20 @@ export const vueConfig = (options) => {
             multiline: 'always',
           },
         ],
+        // 要求注册的组件在使用时名称为 PascalCase 格式
         'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+        // 要求组件注册时的名称为 PascalCase 格式
         'vue/component-options-name-casing': ['error', 'PascalCase'],
+        // 要求注册事件名称为小驼峰
         'vue/custom-event-name-casing': ['error', 'camelCase'],
+        // 宏顺序
         'vue/define-macros-order': [
           'error',
           {
             order: ['defineProps', 'defineEmits'],
           },
         ],
+        // 强制注释之后有间距
         'vue/html-comment-content-spacing': [
           'error',
           'always',
@@ -67,12 +82,16 @@ export const vueConfig = (options) => {
             exceptions: ['-'],
           },
         ],
+        // 防止指令使用错误 例如 :v-model
         'vue/no-restricted-v-bind': ['error', '/^v-/'],
+        // v-bind 的字符串值要求
         'vue/no-useless-v-bind': 'error',
+        // 单文件不同模块之间要求空行
         'vue/padding-line-between-blocks': ['error', 'always'],
+        // 对于静态类 单独使用 class 进行设置
         'vue/prefer-separate-static-class': 'error',
 
-        // extensions
+        // 拓展自基础规则
         // prettier 数组括号间距
         'vue/array-bracket-spacing': ['error', 'never'],
         // prettier 箭头函数两边的括号
@@ -97,6 +116,8 @@ export const vueConfig = (options) => {
         'vue/key-spacing': ['error', { beforeColon: false, afterColon: true }],
         // prettier 关键字间距
         'vue/keyword-spacing': ['error', { before: true, after: true }],
+        // 禁止在 template 上使用恒定的条件
+        // 例如 <template v-if="false">
         'vue/no-constant-condition': 'warn',
         'vue/no-empty-pattern': 'error',
         // prettier 额外的括号
@@ -127,6 +148,7 @@ export const vueConfig = (options) => {
             avoidQuotes: true,
           },
         ],
+
         // 为了和 prettier 兼容
         'vue/operator-linebreak': ['error', 'after'],
         'vue/prefer-template': 'error',
@@ -135,7 +157,7 @@ export const vueConfig = (options) => {
         'vue/space-infix-ops': 'error',
         'vue/space-unary-ops': ['error', { words: true, nonwords: false }],
         'vue/template-curly-spacing': 'error',
-        // HTML 保留字作为组件名
+        // HTML 保留字作为组件名 给与警告
         'vue/no-reserved-component-names': 'warn',
         // prettier
         // 但是给与长度错误提示
@@ -168,6 +190,9 @@ export const vueConfig = (options) => {
         // 以 prettier 为准
         'vue/html-self-closing': 'off',
         'vue/singleline-html-element-content-newline': 'off',
+
+        // 禁用 max-len
+        'max-len': 'off',
 
         ...overrides,
       },

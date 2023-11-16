@@ -1,15 +1,17 @@
 import * as jsonc from 'eslint-plugin-jsonc'
 import * as parserJsonc from 'jsonc-eslint-parser'
 
+import { GLOB_JSON, GLOB_JSONC, GLOB_JSON5 } from './glob.js'
+
 /**
- * @param {import('./index.d.ts').ConfigItemOptions} options
- * @returns {import('./types.js').ConfigItem[]}
+ * @param {import('./types.d.ts').ConfigItemOptions} options
+ * @returns {import('./types.d.ts').ConfigItem[]}
  *  */
 export const jsoncConfig = (options) => {
   const { overrides = {} } = options
   return [
     {
-      files: ['**/*.json', '**/*.jsonc', '**/*.json5'],
+      files: [GLOB_JSON, GLOB_JSONC, GLOB_JSON5],
       plugins: {
         jsonc,
       },

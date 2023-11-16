@@ -11,7 +11,7 @@ import { vueConfig } from './vue.js'
 const vuePackages = ['vue', 'nuxt', 'vitepress', '@slidev/cli']
 
 /**
- * @param {import('./index.d.ts').Options | undefined} options
+ * @param {import('./types.d.ts').Options | undefined} options
  */
 const koalan = (options = {}) => {
   const {
@@ -48,6 +48,7 @@ const koalan = (options = {}) => {
   if (isVue) {
     configs.push(
       ...vueConfig({
+        isTs,
         overrides: options.overrides?.vue,
       }),
     )
