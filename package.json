@@ -10,8 +10,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist && tsc",
-    "release": "bumpp && pnpm publish"
+    "build": "rm -rf dist && tsc && node scripts/copy.js",
+    "release": "npm run build && bumpp && pnpm publish"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.9.1",
