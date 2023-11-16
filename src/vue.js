@@ -49,7 +49,7 @@ export const vueConfig = (options) => {
 
         // 标签顺序
         // 仅作推荐
-        'vue/component-tags-order': ['warning', {
+        'vue/component-tags-order': ['warn', {
           order: ['script', 'template', 'style'],
         }],
         
