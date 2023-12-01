@@ -12,6 +12,8 @@ export const importsConfig = (options) => {
         // https://github.com/import-js/eslint-plugin-import
         import: importsPlugin,
       },
+      // TODO 和 prettier 的 import sort 插件冲突
+      // 考虑移除或者修改 prettier 的 import sort 插件
       rules: {
         // import order
         'import/order': [
