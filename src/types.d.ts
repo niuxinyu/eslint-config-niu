@@ -14,16 +14,16 @@ export interface Options {
   isVue: boolean
   ignores: string[]
   overrides?: {
-    javascript?: any
-    typescript?: any
-    jsonc?: any
-    markdown?: any
-    vue?: any
-    imports?: any
-    markdown?: any
+    javascript?: Record<string, any>
+    typescript?: Record<string, any>
+    jsonc?: Record<string, any>
+    markdown?: Record<string, any>
+    vue?: Record<string, any>
+    imports?: Record<string, any>
+    markdown?: Record<string, any>
   }
 }
 
 export interface ConfigItemOptions {
-  overrides?: any
+  overrides?: Record<string, any>
 }

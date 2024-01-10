@@ -23,7 +23,6 @@ const koalan = (options = {}) => {
   const defaultIgnores = ignoresConfig()
   const ignoresRes = [...defaultIgnores, ...ignores]
 
-  // 基础配置
   const configs = [
     ...ignoresRes,
     ...jsoncConfig({

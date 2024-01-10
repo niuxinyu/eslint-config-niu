@@ -3,3 +3,5 @@
   开发 只启用 eslint 的报错功能 使用 prettier 进行代码格式化
 
 # version
+# overrides
+直接覆盖规则即可

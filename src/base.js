@@ -78,7 +78,7 @@ export const baseConfig = (options) => {
         // 'quote-props': ['error', 'as-needed'],
 
         // 禁止重新分配函数参数
-        // 有些时候这是比较方便快捷的做法
+        // 有时候挺有用的
         'no-param-reassign': 'off',
         // prettier 数组括号间距
         'array-bracket-spacing': ['error', 'never'],
